@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spam Detector</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Spam Detector</h1>
+      <p class="subtitle">Paste or type a message to see how likely it is spam.</p>
+    </header>
+
+    <section class="card">
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        rows="8"
+        placeholder="e.g. WINNER!! Call now to claim your free prize..."
+        autofocus
+      ></textarea>
+
+      <div class="actions">
+        <button id="analyze-btn" type="button">Analyze</button>
+        <button id="clear-btn" type="button" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section id="result" class="card result hidden" aria-live="polite">
+      <div class="result-header">
+        <span id="result-label" class="badge">—</span>
+        <span id="result-summary" class="summary"></span>
+      </div>
+
+      <div class="meter">
+        <div class="meter-labels">
+          <span>Not spam</span>
+          <span>Spam</span>
+        </div>
+        <div class="meter-track">
+          <div id="meter-fill" class="meter-fill"></div>
+          <div id="meter-marker" class="meter-marker"></div>
+        </div>
+        <p id="spam-percent" class="percent"></p>
+      </div>
+    </section>
+
+    <p id="error" class="error hidden" role="alert"></p>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
